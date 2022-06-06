@@ -5,7 +5,7 @@ import { COUNTRIES_BY_CONTINENT, COUNTRIES_AND_LANGUAGES } from './queries';
 import ByContinent from './components/ByContinent';
 import ByLanguage from './components/ByLanguage';
 
-export default function Countries({search, GroupBy}){
+export default function Countries({searchedQuery, GroupBy, SortBy}){
 
     const query = GroupBy === 'Continent' ? COUNTRIES_BY_CONTINENT : COUNTRIES_AND_LANGUAGES;
 
@@ -14,8 +14,8 @@ export default function Countries({search, GroupBy}){
     if (error||loading) return <p>{error? `Error: ${error.message}` : "Loading..."}</p>;
 
     if(GroupBy === 'Continent') 
-    return <ByContinent data={data} query={search}/>
+    return <ByContinent data={data} query={searchedQuery} sort={SortBy}/>
     
     if(GroupBy === 'Language')
-    return <ByLanguage data={data} query={search}/>
+    return <ByLanguage data={data} query={searchedQuery} sort={SortBy}/>
 }
