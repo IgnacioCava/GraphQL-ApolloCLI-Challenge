@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Countries from "../../Countries";
+import Countries from "../countries/Countries";
 import { Mag, AppWrapper, Input, DivInput } from "./styles";
 import mag from "../../assets/mag.png";
 import Options from "../options/Options.jsx";
