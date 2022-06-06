@@ -19,7 +19,7 @@ const countriesByContinent = (data, query, sort) =>
                 sort.charAt(0) === '-' ?
                 -a.name.localeCompare(b.name) : a.name.localeCompare(b.name)
             : sort.charAt(0) === '-' ? 
-                b.countries.length - a.countries.length : a.countries.length - b.countries.length
+                a.countries.length - b.countries.length : b.countries.length - a.countries.length
         );
 
 export default countriesByContinent;
