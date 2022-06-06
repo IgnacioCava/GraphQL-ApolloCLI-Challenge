@@ -6,6 +6,12 @@ query getCountriesByContinent {
         countries{
             name
             code
+            native
+          	capital
+          	emoji
+            languages{
+                name
+            }
         }
     }
 }
@@ -16,6 +22,12 @@ query getCountriesLanguages {
     countries{
         name
         code
+        native
+        capital
+        emoji
+        continent{
+            name
+        }
         languages{
             name
         }
