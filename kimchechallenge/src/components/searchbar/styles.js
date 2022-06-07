@@ -16,7 +16,6 @@ export const AppWrapper = styled.div`
     height: 100vh;
     margin: auto;
     max-width: 600px;
-    min-width: 400px;
     padding: 5px;
     width: 90%;
 `
