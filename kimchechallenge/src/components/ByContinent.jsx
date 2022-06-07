@@ -1,16 +1,14 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import countriesByContinent from "../mappers/countriesByContinent";
 
-const ByContinent = memo(({ data, query }) => {
+const ByContinent = memo(({ data, query, sort }) => {
 
     if(data) return (
         <div>
-            {countriesByContinent(data, query).map(({ name, countries, code }) => (
+            {countriesByContinent(data, query, sort).map(({ name, countries, code }) => (
                 <div key={code}>
-                    <div>
-                        <h1>{name}</h1>
-                        {countries.map(({ name }, i) => <p key={i}>{name}</p>)}
-                    </div>
+                    <h1>{name}</h1>
+                    {countries.map(({ name }, i) => <p key={i}>{name}</p>)}
                 </div>
             ))}
         </div>
