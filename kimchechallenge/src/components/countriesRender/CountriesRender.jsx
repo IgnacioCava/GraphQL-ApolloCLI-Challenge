@@ -3,7 +3,7 @@ import countriesByContinent from "../../mappers/countriesByContinent";
 import countriesByLanguage from "../../mappers/countriesByLanguage";
 import capitalIcon from "../../assets/capital.png";
 import styled from "styled-components";
-import { Name, Country, ListContainer, Sort, LangData, Languages, Data, CapData, LangTag, Capital, EngName, Native, Divisor, List } from "./styles";
+import { Name, Country, ListContainer, Sort, LangData, Languages, Data, CapData, LangTag, Capital, EngName, Native, Divisor, List, Card } from "./styles";
 
 const CountriesRender = memo(({ data, query, sort, group }) => {
 
@@ -18,7 +18,7 @@ const CountriesRender = memo(({ data, query, sort, group }) => {
                 <List>
                     {countries.map(({ name, native, capital, emoji, languages, continent }) => 
                         <Divisor key={name}>
-                            <Card >
+                            <Card>
                                 <Country>
                                     {emoji} 
                                     <Name>
@@ -50,18 +50,5 @@ const CountriesRender = memo(({ data, query, sort, group }) => {
         )) 
     else return null
 })
-
-const Card = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    background-color: var(--white);
-    border-radius: 5px;
-    box-sizing: border-box;
-    border: 2px solid var(--base-border-color);
-    padding: 5px;
-`
-
 
 export default CountriesRender;
