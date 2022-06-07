@@ -62,7 +62,9 @@ export const Data = styled.div`
 `
 
 export const CapData = styled.div`
+    align-items: center;
     display: flex;
+    flex-wrap: wrap;
     gap: 5px;
     line-height: 19px;
 `
