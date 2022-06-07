@@ -87,9 +87,9 @@ export const Capital = styled.img`
     width: 20px;
 `
 
-export const EngName = styled(Typography).attrs(()=>({size:'text', bold:true}))``
+export const EngName = styled(Typography).attrs(() => ({size:'text', bold:true}))``
 
-export const Native = styled(Typography).attrs(() => ({color:'grey'}))``
+export const Native = styled(Typography).attrs(() => ({size:'subdata',color:'grey'}))``
 
 export const Divisor = styled.div`
     align-items: flex-start;
