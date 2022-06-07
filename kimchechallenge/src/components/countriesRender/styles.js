@@ -105,6 +105,18 @@ export const Divisor = styled.div`
     width: 50%;
 `
 
+export const Card = styled.div`
+    background-color: var(--white);
+    border-radius: 5px;
+    border: 2px solid var(--base-border-color);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 5px;
+    width: 100%;
+`
+
 export const List = styled.div`
     align-items: center;
     box-sizing: border-box;

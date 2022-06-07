@@ -8,6 +8,7 @@ export const Mag = styled.img`
 
 export const AppWrapper = styled.div`
     align-self: center;
+    box-sizing: border-box;
     color: var(--base-font-color);
     display: flex;
     flex-direction: column;
@@ -16,9 +17,8 @@ export const AppWrapper = styled.div`
     margin: auto;
     max-width: 600px;
     min-width: 400px;
-    width: 90%;
     padding: 5px;
-    box-sizing: border-box;
+    width: 90%;
 `
 
 export const Input = styled.input`
