@@ -3,8 +3,7 @@ import "./App.css";
 import { InMemoryCache } from "apollo-boost";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
-import Countries from "./Countries";
-import SearchBar from "./components/SearchBar";
+import SearchBar from "./components/searchbar/SearchBar";
 
 const client = new ApolloClient({
   uri: "https://countries.trevorblades.com",
@@ -13,12 +12,9 @@ const client = new ApolloClient({
 
 const App = () => (
   <ApolloProvider client={client}>
-    <div>
-      <h2>
-        Country search
-        <SearchBar/>
-      </h2>
-    </div>
+    <SearchBar/>
   </ApolloProvider>
 );
+
 export default App;
+

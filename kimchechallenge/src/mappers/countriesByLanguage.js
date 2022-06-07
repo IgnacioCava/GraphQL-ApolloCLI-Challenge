@@ -15,7 +15,6 @@ const countriesByLanguage = (data, query, sort) =>
                                 country.languages.map(e=>e.name).includes(language.name) 
                                 && country.name.toLowerCase().includes(query.toLowerCase())
                             )
-                            .sort((a,b) => a.name.localeCompare(b.name))
             }
         })
         .sort((a, b) => 
