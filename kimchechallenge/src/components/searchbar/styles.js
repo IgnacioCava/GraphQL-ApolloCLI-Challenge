@@ -8,14 +8,17 @@ export const Mag = styled.img`
 
 export const AppWrapper = styled.div`
     align-self: center;
-    color: #3a3a3a;
+    color: var(--base-font-color);
     display: flex;
     flex-direction: column;
     gap:5px;
     height: 100vh;
     margin: auto;
-    min-width: 500px;
-    width: 60%;
+    max-width: 600px;
+    min-width: 400px;
+    width: 90%;
+    padding: 5px;
+    box-sizing: border-box;
 `
 
 export const Input = styled.input`
@@ -23,8 +26,8 @@ export const Input = styled.input`
     border-radius: 15px;
     border: 0;
     box-sizing: border-box;
-    color: #656565;
-    font-size: .8rem;
+    color: var(--input-font-color);
+    font-size: var(--subdata-font-size);
     font-weight: 600;
     outline: none;
     padding:0;
@@ -34,10 +37,12 @@ export const Input = styled.input`
 
 export const DivInput = styled.div`
     align-items: center;
-    background: #fdfdfd;
+    background: var(--input-bg);
     border-radius: 20px;
-    border: 2px solid #898989;
+    border: 2px solid var(--base-border-color);
+    box-sizing: border-box;
     display: flex;
     gap:5px;
     padding: 5px;
+    width: 100%;
 `

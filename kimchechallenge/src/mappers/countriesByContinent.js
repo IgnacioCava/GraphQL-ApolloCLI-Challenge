@@ -9,9 +9,7 @@ const countriesByContinent = (data, query, sort) =>
         .map(continent=>{
             return {
                 ...continent,
-                countries: continent.countries
-                            .filter(country => country.name.toLowerCase().includes(query.toLowerCase()))
-                            .sort((a,b) => a.name.localeCompare(b.name))
+                countries: continent.countries.filter(country => country.name.toLowerCase().includes(query.toLowerCase()))
             } 
         })
         .sort((a, b) => 

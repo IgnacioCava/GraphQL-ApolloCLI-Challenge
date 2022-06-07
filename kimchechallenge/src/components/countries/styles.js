@@ -11,12 +11,12 @@ export const Scrollable = styled.div`
     }
     ::-webkit-scrollbar-track {
         background-clip: padding-box;
-        background-color: #000000a6;
+        background-color: var(--scrollbar-track-color);
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
     }
     ::-webkit-scrollbar-thumb {
-        background-color: #0080ff;
+        background-color: var(--scrollbar-thumb-color);
         border-radius: 10px;
         box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
     }
@@ -27,11 +27,10 @@ export const Loading = styled.img`
 `
 
 export const LoadWrapper = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-
-overflow: hidden;
+    align-items: center;
+    display: flex;
     height: 100%;
+    justify-content: center;
     margin-bottom:80px;
+    overflow: hidden;
 `

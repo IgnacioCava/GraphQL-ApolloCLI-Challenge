@@ -1,22 +1,30 @@
 import React, { memo } from "react";
 import countriesByContinent from "../../mappers/countriesByContinent";
+import countriesByLanguage from "../../mappers/countriesByLanguage";
 import capitalIcon from "../../assets/capital.png";
-import { Name, Country, ListContainer, Sort, LangData, Languages, Data, CapData, LangTag, Capital, EngName, Native, Card, List } from "./styles";
+import styled from "styled-components";
+import { Name, Country, ListContainer, Sort, LangData, Languages, Data, CapData, LangTag, Capital, EngName, Native, Divisor, List } from "./styles";
 
-const ByContinent = memo(({ data, query, sort }) => {
+const CountriesRender = memo(({ data, query, sort, group }) => {
 
     if(data) return (
-        countriesByContinent(data, query, sort).map(({ name, countries, code }) =>
-            <ListContainer key={code}>
+        (group==='continent'?
+        countriesByContinent(data, query, sort)
+        :countriesByLanguage(data, query, sort))
+        .map(({ name, countries, code }) =>
+            <ListContainer key={code} >
                 <div><Sort>{name}</Sort>, {countries.length} countries</div>
                 
                 <List>
-                    {countries.map(({ name, native, capital, emoji, languages }) => 
-                        <Card key={name}>
+                    {countries.map(({ name, native, capital, emoji, languages, continent }) => 
+                        <Divisor key={name}>
+                            <Card >
                                 <Country>
                                     {emoji} 
                                     <Name>
-                                        <EngName>{name}</EngName> <Native>{native}</Native>
+                                        <EngName>{name}</EngName> 
+                                        <Native>{native}</Native>
+                                        {continent&&continent.name}
                                     </Name>
                                 </Country>
                                 {(capital || languages.length)?
@@ -34,7 +42,8 @@ const ByContinent = memo(({ data, query, sort }) => {
                                         :null}    
                                     </Data>
                                 :null}
-                        </Card>
+                            </Card>
+                        </Divisor>
                     )}
                 </List>
             </ListContainer>
@@ -42,5 +51,17 @@ const ByContinent = memo(({ data, query, sort }) => {
     else return null
 })
 
+const Card = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 2px solid var(--base-border-color);
+    padding: 5px;
+`
 
-export default ByContinent;
+
+export default CountriesRender;

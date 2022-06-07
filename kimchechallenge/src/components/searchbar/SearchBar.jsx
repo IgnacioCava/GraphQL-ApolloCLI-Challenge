@@ -13,7 +13,7 @@ export const SearchBar = () => {
 
     const Search = (e) => {
         e.preventDefault();
-        setQuery(e.target.value);
+        setQuery(e.target.value.trim());
     }
     
     const GroupBy = (e) => {
